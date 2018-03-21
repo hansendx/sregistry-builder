@@ -25,6 +25,7 @@ RUN apt-get update && \
     apt-get autoclean -y && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* 
-ADD sreistry_file /sregistry_file
+
+ADD ./sregistry_file /sregistry_file
 
 ENTRYPOINT [ "bash" ]
