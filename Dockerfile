@@ -27,5 +27,3 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* 
 
 ADD ./sregistry_file /sregistry_file
-
-ENTRYPOINT [ "bash" ]
