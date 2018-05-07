@@ -1,10 +1,11 @@
 FROM python:3.7-rc-stretch
 
 ENV SINGULARITY_VERSION=2.4.3
-ENV BUILD_SOFTWARE="git libtool automake"
-ENV CONTAINER_SOFTWARE="squashfs-tools libarchive-dev"
+ENV BUILD_SOFTWARE="libtool automake"
+ENV CONTAINER_SOFTWARE="git squashfs-tools libarchive-dev"
 ENV SREGISTRY_COMMIT="cb595c0b3371514c648b1844a914f861fb842d4f"
 ENV SREGISTRY_CLIENT=registry
+ENV PIP_INSTALL="requests_toolbelt gitpython"
 
 RUN apt-get update && \
     apt-get install ${BUILD_SOFTWARE} ${CONTAINER_SOFTWARE} -y && \
@@ -20,7 +21,7 @@ RUN apt-get update && \
     git checkout ${SREGISTRY_COMMIT} && \
     python setup.py install && \
     cd .. && rm -rf sregistry-cli && \
-    pip install requests_toolbelt && \
+    pip install ${PIP_INSTALL} && \
     apt-get purge ${BUILD_SOFTWARE} -y && \
     apt-get autoclean -y && \
     apt-get autoremove -y && \
