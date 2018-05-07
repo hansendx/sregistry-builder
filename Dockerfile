@@ -5,7 +5,7 @@ ENV BUILD_SOFTWARE="libtool automake"
 ENV CONTAINER_SOFTWARE="git squashfs-tools libarchive-dev"
 ENV SREGISTRY_COMMIT="cb595c0b3371514c648b1844a914f861fb842d4f"
 ENV SREGISTRY_CLIENT=registry
-ENV PIP_INSTALL="requests_toolbelt gitpython"
+ENV PIP_INSTALL="requests_toolbelt gitpython iso8601"
 
 RUN apt-get update && \
     apt-get install ${BUILD_SOFTWARE} ${CONTAINER_SOFTWARE} -y && \
