@@ -5,7 +5,7 @@ ENV BUILD_SOFTWARE="libtool automake"
 ENV CONTAINER_SOFTWARE="git squashfs-tools libarchive-dev"
 ENV SREGISTRY_COMMIT="cb595c0b3371514c648b1844a914f861fb842d4f"
 ENV SREGISTRY_CLIENT=registry
-ENV PIP_INSTALL="requests_toolbelt gitpython iso8601"
+ENV PIP_INSTALL="requests_toolbelt gitpython iso8601 sregistry"
 
 RUN apt-get update && \
     apt-get install ${BUILD_SOFTWARE} ${CONTAINER_SOFTWARE} -y && \
@@ -16,7 +16,6 @@ RUN apt-get update && \
     bash configure --prefix=/usr/local && \
     make install && \
     cd .. && rm -rf singularity/ && \
-    git clone https://www.github.com/singularityhub/sregistry-cli.git && \
     cd sregistry-cli && \
     git checkout ${SREGISTRY_COMMIT} && \
     python setup.py install && \
