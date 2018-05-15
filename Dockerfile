@@ -16,7 +16,7 @@ RUN apt-get update && \
     bash configure --prefix=/usr/local && \
     make install && \
     cd .. && rm -rf singularity/ && \
-    git clone https://www.github.com/singularityhub/sregistry-cli.git && \
+    git clone -b development https://www.github.com/singularityhub/sregistry-cli.git && \
     cd sregistry-cli && \
     git checkout ${SREGISTRY_COMMIT} && \
     python setup.py install && \
