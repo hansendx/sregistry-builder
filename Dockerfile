@@ -16,10 +16,6 @@ RUN apt-get update && \
     bash configure --prefix=/usr/local && \
     make install && \
     cd .. && rm -rf singularity/ && \
-    cd sregistry-cli && \
-    git checkout ${SREGISTRY_COMMIT} && \
-    python setup.py install && \
-    cd .. && rm -rf sregistry-cli && \
     pip install ${PIP_INSTALL} && \
     apt-get purge ${BUILD_SOFTWARE} -y && \
     apt-get autoclean -y && \
