@@ -21,8 +21,8 @@ RUN apt-get update && \
     make install && \
     cd .. && rm -rf singularity/ && \
     git clone -b $AUTOBUILD_VERSION $AUTOBUILD_GIT $AUTOBUILD_LOCAL_REPO_NAME && \
-    pip install $AUTOBUILD_LOCAL_REPO_NAME && \
-    cd .. && rm -rf $AUTOBUILD_LOCAL_REPO_NAME && \
+    pip install $AUTOBUILD_LOCAL_REPO_NAME/ && \
+    rm -rf $AUTOBUILD_LOCAL_REPO_NAME && \
     pip install ${PIP_INSTALL} && \
     apt-get purge ${BUILD_SOFTWARE} -y && \
     apt-get autoclean -y && \
