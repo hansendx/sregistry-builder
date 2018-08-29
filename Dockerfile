@@ -7,7 +7,7 @@ ENV SREGISTRY_COMMIT="cb595c0b3371514c648b1844a914f861fb842d4f"
 ENV SREGISTRY_CLIENT=registry
 ENV PIP_INSTALL="requests_toolbelt gitpython iso8601 sregistry"
 ENV AUTOBUILD_GIT="https://github.com/MPIB/SingularityAutobuild" 
-ENV AUTOBUILD_VERSION="v0.1.0"
+ENV AUTOBUILD_VERSION="v0.1.1"
 ENV AUTOBUILD_LOCAL_REPO_NAME="autobuild"
 
 
