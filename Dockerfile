@@ -9,7 +9,7 @@ ENV SREGISTRY_CLIENT=registry
 ENV CLONE_TMP="clone_dir/"
 ENV PIP_INSTALL="requests_toolbelt gitpython iso8601"
 ENV AUTOBUILD_GIT="https://github.com/MPIB/SingularityAutobuild" 
-ENV AUTOBUILD_VERSION="v0.1.1"
+ENV AUTOBUILD_VERSION="build_log_parametrisation"
 ENV AUTOBUILD_LOCAL_REPO_NAME="autobuild"
 
 
